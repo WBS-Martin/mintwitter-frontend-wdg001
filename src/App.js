@@ -32,18 +32,22 @@ const App = () => {
   console.log(messages)
 
   return (
-    <div className='App'>
-      <Navigation activeUser={activeUser} />
-      <Switch>
-        <Route path='/messages/:id'>
-          <MessageDetail messages={messages} />
-        </Route>
-        <Route path='/'>
-          <Messages messages={messages} handleSortByDate={handleSortByDate} />
-        </Route>
-      </Switch>
-      <Footer />
-    </div>
+    <>
+      <div className='App'>
+        <div className="navbar-wrapper">
+          <Navigation activeUser={activeUser} />
+        </div>
+        <Switch>
+          <Route path='/messages/:id'>
+            <MessageDetail messages={messages} />
+          </Route>
+          <Route path='/'>
+            <Messages messages={messages} handleSortByDate={handleSortByDate} />
+          </Route>
+        </Switch>
+        <Footer />
+      </div>
+    </>
   )
 }
 
