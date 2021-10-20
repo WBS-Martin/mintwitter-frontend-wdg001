@@ -11,13 +11,15 @@ const Navigation = ({ activeUser }) => {
         <li>Users</li>
       </ul>
       <div>
-        {activeUser && (
-          <div className="user-display">
-            <h3>active user</h3>
+      {activeUser && (
+        <div className="user-display">
+          <div className="user-avatar">AU</div>
+          <div  className="user-name">
             <p>{activeUser[0].name}</p>
             <p>{activeUser[0].email}</p>
           </div>
-        )}
+        </div>
+      )}
       </div>
     </nav>
   )

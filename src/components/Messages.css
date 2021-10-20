@@ -25,5 +25,18 @@
 }
 
 .messages-container li a:hover {
-	color: darkred;
+	color: rgb(29,161,242);;
+}
+
+.sort-btn {
+  background-color: rgb(29,161,242);
+  border-radius: 17px;
+  width: 140px;
+  height: 35px;
+  border: none;
+  margin: 0.5em;
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+  margin-left: 0px;
 }
