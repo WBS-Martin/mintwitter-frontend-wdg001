@@ -11,7 +11,7 @@ const Messages = ({ messages, handleSortByDate }) => {
 
   return (
     <div className='messages-container'>
-      <button onClick={handleSortByDate}>Sort by date</button>
+      <button className="sort-btn" onClick={handleSortByDate}>Sort by date</button>
       {messages &&
         messages.map((message) => (
           <li key={message._id}>
