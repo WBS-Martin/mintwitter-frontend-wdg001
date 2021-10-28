@@ -1,12 +1,13 @@
-import { useState, useEffect } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { useState, useEffect } from 'react'
+import { Switch, Route } from 'react-router-dom'
 
-import Navigation from './components/Navigation';
-import Footer from './components/Footer';
-import Messages from './components/Messages';
-import MessageDetail from './components/MessageDetail';
-import LeftCol from './components/LeftCol';
-import RightCol from './components/RightCol';
+import Navigation from './components/Navigation'
+import Footer from './components/Footer'
+import Messages from './components/Messages'
+import MessageDetail from './components/MessageDetail'
+import LeftCol from './components/LeftCol'
+import RightCol from './components/RightCol'
+import NewPost from './components/NewPost'
 
 import './App.css'
 
@@ -31,27 +32,31 @@ const App = () => {
     setMessages(sortedArray)
   }
 
-  console.log(messages)
-
   return (
     <>
       <div className='App'>
-        <div className="navbar-wrapper">
+        <div className='navbar-wrapper'>
           <Navigation activeUser={activeUser} />
         </div>
-        <div className="body">
-          <div className="left-column">
+        <div className='body'>
+          <div className='left-column'>
             <LeftCol />
           </div>
           <Switch>
+            <Route path='/post'>
+              <NewPost />
+            </Route>
             <Route path='/messages/:id'>
               <MessageDetail messages={messages} />
             </Route>
             <Route path='/'>
-              <Messages messages={messages} handleSortByDate={handleSortByDate} />
+              <Messages
+                messages={messages}
+                handleSortByDate={handleSortByDate}
+              />
             </Route>
           </Switch>
-          <div className="right-column">
+          <div className='right-column'>
             <RightCol />
           </div>
         </div>
